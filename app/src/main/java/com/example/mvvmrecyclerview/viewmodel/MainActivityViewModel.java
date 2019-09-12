@@ -9,6 +9,8 @@ import androidx.lifecycle.LiveData;
 import com.example.mvvmrecyclerview.model.User;
 import com.example.mvvmrecyclerview.repository.MainActivityRepository;
 
+import java.util.List;
+
 public class MainActivityViewModel extends AndroidViewModel {
 
     private MainActivityRepository repository;
@@ -19,7 +21,7 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     // this method will be call to mainactivity
-    public LiveData<User[]> getAllUserData()
+    public LiveData<List<User>> getAllUserData()
     {
         // we just call reopository method here
         return repository.getUserData();

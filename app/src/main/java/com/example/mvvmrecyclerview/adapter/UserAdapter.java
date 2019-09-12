@@ -17,9 +17,10 @@ import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Holder>{
 
-    private User[] users;
 
-    public UserAdapter(User[] users) {
+    private List<User> users;
+
+    public UserAdapter(List<User> users) {
         this.users = users;
     }
 
@@ -35,14 +36,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.Holder>{
     public void onBindViewHolder(@NonNull Holder holder, final int position) {
 
 
-        holder.name.setText(users[position].getName());
-        holder.designation.setText(users[position].getDesignation());
+        holder.name.setText(users.get(position).getName());
+        holder.designation.setText(users.get(position).getDesignation());
 
     }
 
     @Override
     public int getItemCount() {
-        return users.length;
+        return users.size();
     }
 
     class Holder extends RecyclerView.ViewHolder{

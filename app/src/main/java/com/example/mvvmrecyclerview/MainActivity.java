@@ -13,6 +13,8 @@ import com.example.mvvmrecyclerview.adapter.UserAdapter;
 import com.example.mvvmrecyclerview.model.User;
 import com.example.mvvmrecyclerview.viewmodel.MainActivityViewModel;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private MainActivityViewModel mainActivityViewModel;
@@ -29,17 +31,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-        mainActivityViewModel.getAllUserData().observe(this, new Observer<User[]>() {
+        mainActivityViewModel.getAllUserData().observe(this, new Observer<List<User>>() {
             @Override
-            public void onChanged(User[] users) {
+            public void onChanged(List<User> users) {
 
-                // we go data here finally by pass repor> vieewmodel >> now here
                 userAdapter = new UserAdapter(users);
                 recyclerView.setAdapter(userAdapter);
 
-                // to get specific data
-                Toast.makeText(MainActivity.this, "get "+users[0].getName(), Toast.LENGTH_SHORT).show();
-
+                // get specific data
+                Toast.makeText(MainActivity.this, ""+users.get(0).getName(), Toast.LENGTH_SHORT).show();
             }
         });
 
