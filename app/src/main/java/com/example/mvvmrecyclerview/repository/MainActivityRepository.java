@@ -21,8 +21,7 @@ public class MainActivityRepository {
 
     private String url = "http://www.coxtunes.com/client_mobile_app_project/education/cbiu/api/administration.php";
     private Context context;
-//    private MutableLiveData<User[]> mutableLiveData;
-//    private User[] user;
+
 
     private MutableLiveData<List<User>> mutableLiveData;
     private List<User> userList;
