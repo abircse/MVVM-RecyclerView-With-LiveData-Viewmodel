@@ -32,7 +32,6 @@ public class MainActivityRepository {
 
     public MutableLiveData<List<User>> getUserData()
     {
-
         if (mutableLiveData == null)
         {
             mutableLiveData = new MutableLiveData<>();
